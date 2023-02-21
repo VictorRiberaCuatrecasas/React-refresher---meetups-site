@@ -12,7 +12,13 @@ function MeetupItem(props) {
     if (itemIsFavorite) {
       favoritesContext.removeFavoriteHandler(props.meetup.id)
     } else {
-      favoritesContext.addFavoriteHandler(props.meetup)
+      favoritesContext.addFavoriteHandler({
+        id: props.meetup.id,
+        title: props.meetup.title,
+        description: props.meetup.description,
+        image: props.meetup.image,
+        address: props.meetup.address,
+      })
     }
   }
 
